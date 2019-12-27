@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bazrlist with vuejs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="app">
+        <div class="main">
+
+            <div id="app">
+                <div class="bazar-lists">
+                    <div class="wrapper">
+                        <div class="bazar-form">
+                            <h2>Your bazar list</h2>
+                            <span class="message" >{{message}}</span>
+                            <form class="form-top" @submit.prevent="addItem">
+                                <input type="text" placeholder="Please type anything..." v-model="newItems" />
+                                <button class="add-new-item">Add new</button>
+                            </form>
+                        </div>
+                        <div class="bazar-list">
+                            <div class="list-item" v-for="(items, index) in listItems" :key="index">
+                                <p class="list-item__text">{{items.itemName}}</p>
+                                <input type="text" name="" v-model="items.price"/>
+                                <span class="item-remove" v-on:click="removeItem(index)">x</span>
+                            </div>
+                            <div class="total-amount">
+                                <p> {{totalAmount}} :Total</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="components.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            listItems: [
+                {itemName: 'Piaj', price: 100},
+                {itemName: 'Rosun', price: 200},
+                {itemName: 'Ada', price: 300},
+                {itemName: 'Rosun', price: 90},
+                {itemName: 'Salt', price: 100},
+                {itemName: 'Rosun', price: 300}
+                
+            ],
+            newItems: '',
+            message: ''
+        },
+        computed: {
+            totalAmount() {
+                var total = 0;
+                this.listItems.forEach(item => {
+                    total += parseFloat(item.price);
+                });
+                return total;
+            }
+        },
+        methods: {
+            removeItem(index){
+                this.listItems.splice(index, 1);
+            },
+            addItem(){
+                if(this.newItems == '') {
+                   this.message = "Please type something.";
+                } else {
+                    this.listItems.push(
+                            {itemName: this.newItems, price: 100.00}
+                        );
+                    this.newItems="";
+                }
+            }
+        },
+        mounted: function(){
+            console.log('mounted')
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+.bazar-lists {
+    max-width: 800px;
+    min-height: 600px;
+    margin: 50px auto;
+    background: #ddd;
+}
+.bazar-lists h2 {
+    color: #577284;
+    text-transform: capitalize;
+    font-size: 35px;
+}
+.wrapper {
+    width: 400px;
+    margin: auto;
+}
+.bazar-form {
+    text-align: center;
+    padding: 26px 0;
+    margin: auto;
+}
+.form-top {
+    width: 100%;
+}
+.form-top input[type='text'] {
+    padding: 10px 5px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.add-new-item {
+    padding: 10px 30px;
+    font-size: 17px;
+    margin: 14px 0;
+    background: #577284;
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.bazar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.bazar-list .list-item {
+    padding: 6px 12px;
+    font-size: 18px;
+    color: #fff;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    border-radius: 4px;
+    background: #577284;
+    height: 30px;
+    display: block;
+    overflow: hidden;
+}
+.list-item__text {
+    float: left;
+    width: 33.33%;
+    margin: 0;
+    margin-top: 5px;
+}
+.bazar-list .list-item input[type="text"] {
+    width: 48.33%;
+    float: left;
+    padding: 6px;
+}
+span.item-remove {
+    color: red;
+    margin-right: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    float: right;
+    margin-top: -1px;
+}
+span.message {
+    padding: 3px;
+    margin: 6px;
+    display: block;
+}
+.total-amount {
+    background: #ccc;
+    padding: 1px 13px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: right;
+}
